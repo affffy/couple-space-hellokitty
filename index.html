@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>情侣空间 💕 Hello Kitty</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-logo">💕 我们的小空间</div>
+    <ul class="nav-links">
+      <li><a href="#home">首页</a></li>
+      <li><a href="#counter">在一起</a></li>
+      <li><a href="#story">我们的故事</a></li>
+      <li><a href="#gallery">回忆相册</a></li>
+      <li><a href="#notes">恋爱日记</a></li>
+      <li><a href="#wishlist">心愿清单</a></li>
+      <li><a href="#mood">心情打卡</a></li>
+      <li><a href="#dates">重要日子</a></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle">☰</div>
+  </nav>
+
+  <!-- 首页 Hero -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="kitty-ears">🎀</div>
+      <h1>Hello, 我们的专属空间</h1>
+      <p class="couple-names">
+        <span id="name1" contenteditable="true">小明</span> 
+        <span class="heart">❤️</span> 
+        <span id="name2" contenteditable="true">小红</span>
+      </p>
+      <p class="hero-sub">点击名字可以直接修改哦～</p>
+      <div class="hero-buttons">
+        <a href="#counter" class="btn primary">看看我们在一起多久了</a>
+        <button class="btn secondary" id="loveBtn">点击说爱你 💕</button>
+      </div>
+    </div>
+    <div class="floating-hearts" id="floatingHearts"></div>
+  </section>
+
+  <!-- 在一起天数 -->
+  <section id="counter" class="section counter-section">
+    <h2 class="section-title">💖 我们已经在一起</h2>
+    <div class="counter-box">
+      <div class="counter-item">
+        <span class="number" id="days">0</span>
+        <span class="label">天</span>
+      </div>
+      <div class="counter-item">
+        <span class="number" id="hours">0</span>
+        <span class="label">小时</span>
+      </div>
+      <div class="counter-item">
+        <span class="number" id="minutes">0</span>
+        <span class="label">分钟</span>
+      </div>
+      <div class="counter-item">
+        <span class="number" id="seconds">0</span>
+        <span class="label">秒</span>
+      </div>
+    </div>
+    <p class="counter-tip">修改开始日期：<input type="date" id="startDate" value="2024-01-01"></p>
+  </section>
+
+  <!-- 我们的故事 -->
+  <section id="story" class="section story-section">
+    <h2 class="section-title">📖 我们的故事</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3 contenteditable="true">第一次见面</h3>
+          <p contenteditable="true">那天阳光明媚，你的笑容让我心动了～</p>
+          <span class="timeline-date" contenteditable="true">2024.01.01</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3 contenteditable="true">正式在一起</h3>
+          <p contenteditable="true">你说“好”，世界都亮了。</p>
+          <span class="timeline-date" contenteditable="true">2024.02.14</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3 contenteditable="true">第一次旅行</h3>
+          <p contenteditable="true">一起看海、一起吃火锅，回忆满满。</p>
+          <span class="timeline-date" contenteditable="true">2024.05.20</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3 contenteditable="true">添加更多故事...</h3>
+          <p contenteditable="true">点击这里直接编辑，写下属于我们的瞬间吧！</p>
+          <span class="timeline-date" contenteditable="true">未来</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 回忆相册 -->
+  <section id="gallery" class="section gallery-section">
+    <h2 class="section-title">📸 回忆相册</h2>
+    <p class="section-desc">点击图片可以放大，之后可以替换成你们的真实照片</p>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openModal(this)">
+        <div class="placeholder-img">🌸</div>
+        <p>第一次约会</p>
+      </div>
+      <div class="gallery-item" onclick="openModal(this)">
+        <div class="placeholder-img">🎀</div>
+        <p>生日惊喜</p>
+      </div>
+      <div class="gallery-item" onclick="openModal(this)">
+        <div class="placeholder-img">💕</div>
+        <p>一起看日落</p>
+      </div>
+      <div class="gallery-item" onclick="openModal(this)">
+        <div class="placeholder-img">🍰</div>
+        <p>甜品约会</p>
+      </div>
+      <div class="gallery-item" onclick="openModal(this)">
+        <div class="placeholder-img">🌊</div>
+        <p>海边旅行</p>
+      </div>
+      <div class="gallery-item" onclick="openModal(this)">
+        <div class="placeholder-img">🎄</div>
+        <p>节日合影</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 恋爱日记 / 留言板 -->
+  <section id="notes" class="section notes-section">
+    <h2 class="section-title">💌 恋爱日记 & 留言板</h2>
+    <div class="notes-container">
+      <div class="note-form">
+        <textarea id="noteInput" placeholder="写下想对TA说的话..."></textarea>
+        <button class="btn primary" onclick="addNote()">贴上小纸条</button>
+      </div>
+      <div class="notes-board" id="notesBoard">
+        <!-- 动态添加的笔记 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 心愿清单 -->
+  <section id="wishlist" class="section wishlist-section">
+    <h2 class="section-title">🎁 我们的心愿清单</h2>
+    <div class="wishlist-container">
+      <div class="wish-form">
+        <input type="text" id="wishInput" placeholder="想一起完成的事情...">
+        <button class="btn primary" onclick="addWish()">添加心愿</button>
+      </div>
+      <ul class="wish-list" id="wishList">
+        <li class="wish-item">
+          <input type="checkbox"> <span contenteditable="true">一起去看极光</span>
+          <button class="delete-btn" onclick="this.parentElement.remove()">×</button>
+        </li>
+        <li class="wish-item">
+          <input type="checkbox"> <span contenteditable="true">养一只小猫</span>
+          <button class="delete-btn" onclick="this.parentElement.remove()">×</button>
+        </li>
+        <li class="wish-item">
+          <input type="checkbox"> <span contenteditable="true">学做对方最爱吃的菜</span>
+          <button class="delete-btn" onclick="this.parentElement.remove()">×</button>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 心情打卡 -->
+  <section id="mood" class="section mood-section">
+    <h2 class="section-title">😊 今日心情打卡</h2>
+    <div class="mood-container">
+      <div class="mood-selector">
+        <button class="mood-btn" data-mood="超开心" onclick="selectMood(this)">🥰 超开心</button>
+        <button class="mood-btn" data-mood="开心" onclick="selectMood(this)">😊 开心</button>
+        <button class="mood-btn" data-mood="平静" onclick="selectMood(this)">😌 平静</button>
+        <button class="mood-btn" data-mood="有点累" onclick="selectMood(this)">😔 有点累</button>
+        <button class="mood-btn" data-mood="想你" onclick="selectMood(this)">💭 想你</button>
+      </div>
+      <div class="mood-history" id="moodHistory">
+        <p>今天的心情会显示在这里～</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 重要日子 -->
+  <section id="dates" class="section dates-section">
+    <h2 class="section-title">📅 重要日子提醒</h2>
+    <div class="dates-grid">
+      <div class="date-card">
+        <h3 contenteditable="true">恋爱纪念日</h3>
+        <p class="date-value" contenteditable="true">每年 2月14日</p>
+        <p class="countdown" id="anniCountdown">计算中...</p>
+      </div>
+      <div class="date-card">
+        <h3 contenteditable="true">TA的生日</h3>
+        <p class="date-value" contenteditable="true">5月20日</p>
+        <p class="countdown">还有 XX 天</p>
+      </div>
+      <div class="date-card">
+        <h3 contenteditable="true">我的生日</h3>
+        <p class="date-value" contenteditable="true">8月8日</p>
+        <p class="countdown">还有 XX 天</p>
+      </div>
+      <div class="date-card">
+        <h3 contenteditable="true">第一次见面</h3>
+        <p class="date-value" contenteditable="true">2024.01.01</p>
+        <p class="countdown">已过去很久啦</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 爱的语录 -->
+  <section class="section quotes-section">
+    <h2 class="section-title">✨ 今日情话</h2>
+    <div class="quote-box">
+      <p id="quoteText">“有你在的地方，就是家。”</p>
+      <button class="btn secondary" onclick="changeQuote()">换一句</button>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <p>💕 专属于我们的小天地 · Hello Kitty 风格</p>
+    <p>用爱发电 · 永远在一起</p>
+    <p class="footer-note">所有内容都可以直接点击编辑哦～</p>
+  </footer>
+
+  <!-- 图片放大模态框 -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modalImg" class="placeholder-img large">🌸</div>
+      <p id="modalCaption"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
